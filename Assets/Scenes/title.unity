@@ -2099,7 +2099,7 @@ GameObject:
   - component: {fileID: 1759738707}
   m_Layer: 5
   m_Name: score
-  m_TagString: txt
+  m_TagString: Txt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
