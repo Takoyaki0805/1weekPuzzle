@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class scoreboard : MonoBehaviour
+public class Scoreboard : MonoBehaviour
 {
     //refactored
     public Text txt; 
@@ -15,7 +15,7 @@ public class scoreboard : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
-        SceneManager.sceneLoaded += loaded;
+        SceneManager.sceneLoaded += Loaded;
     }
 
     // Update is called once per frame
@@ -25,32 +25,32 @@ public class scoreboard : MonoBehaviour
         txt.text = "score:" + score;    
     }
 
-    public void scoreReset(){
+    public void ScoreReset(){
         score = 0;
         totals = 0;
         bonus = 0;
         // Destroy(this.gameObject);
     }
 
-    public void score_memory(int num){
+    public void ScoreMemory(int num){
         score += num*bonus;
         totals += num*bonus;
     }
 
-    public void disscore(int num){
+    public void DecScore(int num){
         score -= num;
         totals -= num;
     }
 
-    public void setbonus(int value){
+    public void SetBonus(int value){
         bonus = value;
     }
 
-    public void plusbonus(int value){
+    public void PlusBonus(int value){
         bonus += value;
     }
 
-    void loaded(Scene scene,LoadSceneMode e){
+    void Loaded(Scene scene,LoadSceneMode e){
         GameObject[] text_obj = GameObject.FindGameObjectsWithTag("Txt");
         txt =  text_obj[0].GetComponent<Text>();
         score = 0;

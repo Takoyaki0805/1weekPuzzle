@@ -5,12 +5,12 @@ using UnityEngine;
 public class railvisible : MonoBehaviour
 {
     //refactored
-    public Renderer obj;
-    public bool find;
+    public Renderer rail_object;
+    public bool IsVisible;
     // Start is called before the first frame update
     void Start()
     {
-        obj.enabled = find;
+        rail_object.enabled = IsVisible;
     }
 
     // Update is called once per frame

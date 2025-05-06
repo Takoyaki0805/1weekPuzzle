@@ -164,9 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1962e6b4e9f4c2941b316d5082bb2087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rig: {fileID: 0}
   speed: 20
-  ismove: 1
+  IsMove: 0
 --- !u!114 &281596443638404114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,10 +191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da2dab2ee82cbb4fa453c2d0b8f7e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceMax: 5
-  uho: {fileID: 3277992252518576760}
-  bou: {fileID: 1934045375876416078}
-  se: {fileID: 8300000, guid: 6ccdb4591cac4f84b81299542333fb74, type: 3}
+  bounce_max: 5
+  player_object: {fileID: 0}
+  bounce_sound: {fileID: 0}
+  sound: {fileID: 8300000, guid: 6ccdb4591cac4f84b81299542333fb74, type: 3}
 --- !u!82 &1934045375876416078
 AudioSource:
   m_ObjectHideFlags: 0

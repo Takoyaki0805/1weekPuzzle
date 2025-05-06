@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class score_reset : MonoBehaviour
+public class Score_reset : MonoBehaviour
 {
     //refactored
     GameObject[] system;
@@ -18,7 +18,7 @@ public class score_reset : MonoBehaviour
         
     }
 
-    public void remover(){
-        system[0].GetComponent<scoreboard>().scoreReset();
+    public void ScoreRemove(){
+        system[0].GetComponent<Scoreboard>().ScoreReset();
     }
 }

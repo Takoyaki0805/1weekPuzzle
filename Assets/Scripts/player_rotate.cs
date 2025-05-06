@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_rotate : MonoBehaviour
+public class Player_rotate : MonoBehaviour
 {
     //refactored
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class player_rotate : MonoBehaviour
         
     }
 
-    public void ball_rotate(float accel){
+    public void BallRotate(float accel){
         this.transform.Rotate(0f,0f,accel);
     }
 }

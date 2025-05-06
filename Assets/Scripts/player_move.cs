@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class player_move : MonoBehaviour
+public class Player_move : MonoBehaviour
 {
     //refactored
     public Rigidbody2D rig;  
     public float speed;
-    public bool ismove = false;
+    public bool IsMove = false;
     // Start is called before the first frame update
     void Start()
     {
-        ismove = false;
+        IsMove = false;
         rig = this.gameObject.GetComponent<Rigidbody2D>();
         this.gameObject.name = "player";
     }
@@ -20,7 +20,7 @@ public class player_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ismove){
+        if(IsMove){
             rig.gravityScale = 1;
         }else{
             rig.gravityScale = 0;
@@ -28,8 +28,8 @@ public class player_move : MonoBehaviour
         }
     }
 
-    public void go(){
-        ismove = true;
+    public void PlayerGo(){
+        IsMove = true;
         rig.AddForce(transform.right*speed,ForceMode2D.Impulse);
     }
 }

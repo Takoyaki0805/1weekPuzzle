@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class result_popup : MonoBehaviour
 {
     //refactored
-    GameObject[] remain;
+    GameObject[] remain_target;
     public GameObject result_UI;
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,8 @@ public class result_popup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        remain = GameObject.FindGameObjectsWithTag("Hit");
-            if(remain.Length == 0){
+        remain_target = GameObject.FindGameObjectsWithTag("Hit");
+            if(remain_target.Length == 0){
             GameObject[] buttons;
             buttons = GameObject.FindGameObjectsWithTag("Button");
 
@@ -26,10 +26,10 @@ public class result_popup : MonoBehaviour
                 b.SetActive(false);
             }
 
-            GameObject[] sum;
-            sum = GameObject.FindGameObjectsWithTag("Summon");
+            GameObject[] summon;
+            summon = GameObject.FindGameObjectsWithTag("Summon");
 
-            foreach(GameObject b in sum){
+            foreach(GameObject b in summon){
                 b.SetActive(false);
             }
 
@@ -37,7 +37,7 @@ public class result_popup : MonoBehaviour
         }        
     }
 
-    public void change(string s){
+    public void Change(string s){
         SceneManager.LoadScene(s);        
     }
 }

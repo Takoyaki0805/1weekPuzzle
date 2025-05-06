@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_bounce : MonoBehaviour
+public class Player_bounce : MonoBehaviour
 {
     //refactored
     public int bounce_max = 5;
     int bounce_now = 0;
     public GameObject player_object;
-    SpriteRenderer SpriteRenderer;
+    SpriteRenderer sprite_renderer;
     GameObject[] buttons;
     public AudioSource bounce_sound; 
-    public AudioClip se;
+    public AudioClip sound;
     // Start is called before the first frame update
     void Start()
     {
-        SpriteRenderer = player_object.GetComponent<SpriteRenderer>();
+        sprite_renderer = player_object.GetComponent<SpriteRenderer>();
         buttons = GameObject.FindGameObjectsWithTag("button");
     }
 
@@ -29,9 +29,9 @@ public class player_bounce : MonoBehaviour
 
         if(bounce_now<=bounce_max){
             bounce_now++;
-            SpriteRenderer.color = new Color(1f,1f-(float)bounce_now/(float)bounce_max,1f-(float)bounce_now/(float)bounce_max);
+            sprite_renderer.color = new Color(1f,1f-(float)bounce_now/(float)bounce_max,1f-(float)bounce_now/(float)bounce_max);
             Debug.Log(1f-(float)bounce_now/(float)bounce_max);
-            bounce_sound.PlayOneShot(se);
+            bounce_sound.PlayOneShot(sound);
         }else{
             foreach(GameObject b in buttons){
                 b.SetActive(true);

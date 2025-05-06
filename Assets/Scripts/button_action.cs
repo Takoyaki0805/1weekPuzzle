@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class button_action : MonoBehaviour
+public class Button_action : MonoBehaviour
 {
     //refactored
     public Button button;
     // public playermove target;
     private GameObject[] player;
     private GameObject target;
-    private bool rotating = false;
+    private bool IsRotating = false;
     private float speed = 1f;
-    public bool onturn = false;
-    public float accel;
+    public bool IsTurn = false;
+    public float button_accel;
     public GameObject arrow;
     private GameObject system;
 
     // Start is called before the first frame update
     void Start()
     {
-        accel = 0.2f;
+        button_accel = 0.2f;
         GameObject[] searched_system = GameObject.FindGameObjectsWithTag("System");
         system = searched_system[0]; 
     }
@@ -28,14 +28,14 @@ public class button_action : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rotating){
+        if(IsRotating){
             player = GameObject.FindGameObjectsWithTag("Player");
             if(player.Length != 0){
                 target = player[0];
-                target.GetComponent<player_rotate>().ball_rotate(speed);
-                arrow.GetComponent<player_rotate>().ball_rotate(speed);
+                target.GetComponent<Player_rotate>().BallRotate(speed);
+                arrow.GetComponent<Player_rotate>().BallRotate(speed);
             }
-            speed += accel;
+            speed += button_accel;
             if(speed>5f){
                 speed = 5f;
             }
@@ -48,7 +48,7 @@ public class button_action : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player");
         if(player.Length != 0){
             target = player[0];
-            target.GetComponent<player_move>().go();
+            target.GetComponent<Player_move>().PlayerGo();
         }
         foreach(GameObject button in searched_button){
             button.SetActive(false);
@@ -56,24 +56,24 @@ public class button_action : MonoBehaviour
         Debug.Log("ボタン数:"+searched_button.Length);
     }
 
-    public void rotate(){
+    public void Rotate(){
         player = GameObject.FindGameObjectsWithTag("Player");
         if(player.Length != 0){
             target = player[0];
-            target.GetComponent<player_rotate>().ball_rotate(accel);
+            target.GetComponent<Player_rotate>().BallRotate(button_accel);
         }
     }
 
-    public void button_up(){
-        rotating = false;
+    public void ButtonUp(){
+        IsRotating = false;
         speed = 0.1f;
     }
 
     public void button_down(){
-        rotating = true;
+        IsRotating = true;
     }
 
     public void bonusstop(){
-        system.GetComponent<scoreboard>().setbonus(1);
+        system.GetComponent<Scoreboard>().SetBonus(1);
     }
 }

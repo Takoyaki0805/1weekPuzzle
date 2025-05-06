@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class pre_load : MonoBehaviour
+public class Pre_load : MonoBehaviour
 {
     //refactored
     // Start is called before the first frame update

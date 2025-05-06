@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tweet : MonoBehaviour
+public class Tweet : MonoBehaviour
 {
     //refactored
     // Start is called before the first frame update
@@ -17,9 +17,9 @@ public class tweet : MonoBehaviour
         
     }
 
-    public void ontweet(){
-        GameObject[] get = GameObject.FindGameObjectsWithTag("System");
-        int totalscore = get[0].GetComponent<scoreboard>().totals; 
+    public void OnTweet(){
+        GameObject[] score_data = GameObject.FindGameObjectsWithTag("System");
+        int totalscore = score_data[0].GetComponent<Scoreboard>().totals; 
         naichilab.UnityRoomTweet.Tweet ("reflectballfor1week", "あなたはReflectBallで"+totalscore+"点スコアを取りました", "unityroom", "unity1week");
     }
 }

@@ -34,10 +34,10 @@ public class Audio : MonoBehaviour
             target_se.volume = se_volume;
         }
         this.gameObject.GetComponent<AudioSource>().volume = bgm_volume;
-        change();
+        Change();
     }
 
-    public void change(){
+    public void Change(){
         GameObject[] volume_setting = GameObject.FindGameObjectsWithTag("Value");
         if(volume_setting.Length==0){return;}
         Slider volume_bgm = volume_setting[0].GetComponent<Slider>();

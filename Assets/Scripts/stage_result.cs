@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class sresult : MonoBehaviour
+public class Stage_result : MonoBehaviour
 {
-    GameObject single;
+    GameObject system_object;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] gets = GameObject.FindGameObjectsWithTag("System");   
-        single = gets[0];
+        GameObject[] systems = GameObject.FindGameObjectsWithTag("System");   
+        system_object = systems[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = "ステージscore:" + single.GetComponent<scoreboard>().score;
+        this.GetComponent<Text>().text = "ステージscore:" + system_object.GetComponent<Scoreboard>().score;
     }
 }

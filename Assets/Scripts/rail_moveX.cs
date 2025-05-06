@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rail_moveX : MonoBehaviour
+public class Rail_moveX : MonoBehaviour
 {
     //refactored
-    bool direction = false;
+    bool IsDirection = false;
     public float speed = 0.1f;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class rail_moveX : MonoBehaviour
     void OnTriggerStay2D (Collider2D collision){
         if(collision.gameObject.tag=="Wall"||collision.gameObject.tag=="Hit"){
             GameObject material = collision.gameObject;
-            if(!direction){
+            if(!IsDirection){
                 material.transform.position += Vector3.right*speed;
             }else{
                 material.transform.position -= Vector3.right*speed;
@@ -34,12 +34,12 @@ public class rail_moveX : MonoBehaviour
     void OnTriggerExit2D (Collider2D collision){
         if(collision.gameObject.tag=="Wall"||collision.gameObject.tag=="Hit"){
             GameObject material = collision.gameObject;
-            if(!direction){
+            if(!IsDirection){
                 material.transform.position -= Vector3.right*speed;
             }else{
                 material.transform.position += Vector3.right*speed;
             }  
-            direction = !direction;
+            IsDirection = !IsDirection;
         } 
     }
 }

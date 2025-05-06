@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class target : MonoBehaviour
+public class Target : MonoBehaviour
 {
     //refactored
-    GameObject score_mem;
-    public AudioClip se;
+    GameObject score_memory;
+    public AudioClip player_sound;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] tmp = GameObject.FindGameObjectsWithTag("System");
-        score_mem = tmp[0]; 
+        GameObject[] system_object = GameObject.FindGameObjectsWithTag("System");
+        score_memory = system_object[0]; 
     }
 
     // Update is called once per frame
@@ -23,9 +23,9 @@ public class target : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D collision){
         if(collision.gameObject.tag=="Player"){
-            AudioSource.PlayClipAtPoint(se,transform.position);
-            score_mem.GetComponent<scoreboard>().score_memory(100);
-            score_mem.GetComponent<scoreboard>().plusbonus(1);
+            AudioSource.PlayClipAtPoint(player_sound,transform.position);
+            score_memory.GetComponent<Scoreboard>().ScoreMemory(100);
+            score_memory.GetComponent<Scoreboard>().PlusBonus(1);
             Destroy(this.gameObject);
         }
     }

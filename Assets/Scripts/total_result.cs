@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class tresult : MonoBehaviour
+public class Total_result : MonoBehaviour
 {
     //refactored
-    GameObject single;
+    GameObject system_object;
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] gets = GameObject.FindGameObjectsWithTag("Sys");   
-        single = gets[0];
+        GameObject[] systems = GameObject.FindGameObjectsWithTag("Sys");   
+        system_object = systems[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = "総score:" + single.GetComponent<scoreboard>().totals;
+        this.GetComponent<Text>().text = "総score:" + system_object.GetComponent<Scoreboard>().totals;
     }
 }

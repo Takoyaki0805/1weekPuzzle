@@ -964,10 +964,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376f3259d6c996442ab7381f60778e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b: {fileID: 357343943}
-  onturn: 0
-  accel: 0.05
-  sel: {fileID: 1669448038}
+  button: {fileID: 0}
+  IsTurn: 0
+  button_accel: 0
+  arrow: {fileID: 0}
 --- !u!1 &365120257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,6 +2316,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2170794001666624699, guid: ed8cfa09d3a97c349be77f6165887c0d, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ccdb4591cac4f84b81299542333fb74, type: 3}
     - target: {fileID: 1400821330611225505, guid: ed8cfa09d3a97c349be77f6165887c0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.85
@@ -3020,7 +3024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b29e8c3266940f4e813fe871b9b08cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r: {fileID: 365120257}
+  result_UI: {fileID: 0}
 --- !u!1001 &1958290456
 PrefabInstance:
   m_ObjectHideFlags: 0
