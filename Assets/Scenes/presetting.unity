@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 1759738708}
-  s: 0
+  score: 0
   totals: 0
 --- !u!4 &692951731
 Transform:
@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d736bfb2c61954b9602a4d9db21eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmV: 0.7
-  seV: 1
+  bgm_volume: 0.7
+  se_volume: 1
 --- !u!1 &1023927313
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b29e8c3266940f4e813fe871b9b08cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r: {fileID: 1092424003}
+  result_UI: {fileID: 1092424003}
 --- !u!114 &1759738708
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -51,7 +51,7 @@ public class Scoreboard : MonoBehaviour
     }
 
     void Loaded(Scene scene,LoadSceneMode e){
-        GameObject[] text_obj = GameObject.FindGameObjectsWithTag("Txt");
+        GameObject[] text_obj = GameObject.FindGameObjectsWithTag("txt");
         txt =  text_obj[0].GetComponent<Text>();
         score = 0;
     }

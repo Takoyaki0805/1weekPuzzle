@@ -199,4 +199,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba2078ed25e0f44f848602830d74ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 8418501666416994009}
+  rail_object: {fileID: 8418501666416994009}
+  IsVisible: 0

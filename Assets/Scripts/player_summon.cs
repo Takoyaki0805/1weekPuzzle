@@ -14,7 +14,7 @@ public class Player_summon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] system_object = GameObject.FindGameObjectsWithTag("sys");
+        GameObject[] system_object = GameObject.FindGameObjectsWithTag("System");
         score_memory = system_object[0];
     }
 

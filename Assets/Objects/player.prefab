@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rig: {fileID: 0}
   speed: 20
-  IsMove: 0
+  IsMove: 1
 --- !u!114 &281596443638404114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounce_max: 5
-  player_object: {fileID: 0}
-  bounce_sound: {fileID: 0}
+  player_object: {fileID: 3277992252518576760}
+  bounce_sound: {fileID: 1934045375876416078}
   sound: {fileID: 8300000, guid: 6ccdb4591cac4f84b81299542333fb74, type: 3}
 --- !u!82 &1934045375876416078
 AudioSource:

@@ -69,11 +69,11 @@ public class Button_action : MonoBehaviour
         speed = 0.1f;
     }
 
-    public void button_down(){
+    public void ButtonDown(){
         IsRotating = true;
     }
 
-    public void bonusstop(){
+    public void BonusStop(){
         system.GetComponent<Scoreboard>().SetBonus(1);
     }
 }

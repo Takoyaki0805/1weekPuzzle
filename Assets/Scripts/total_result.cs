@@ -11,7 +11,7 @@ public class Total_result : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] systems = GameObject.FindGameObjectsWithTag("Sys");   
+        GameObject[] systems = GameObject.FindGameObjectsWithTag("System");   
         system_object = systems[0];
     }
 

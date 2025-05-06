@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
 {
     //refactored
     GameObject score_memory;
+    public AudioSource audio_source;
     public AudioClip player_sound;
 
     // Start is called before the first frame update

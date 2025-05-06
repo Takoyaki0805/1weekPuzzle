@@ -671,7 +671,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 357343946}
-        m_TargetAssemblyTypeName: button, Assembly-CSharp
+        m_TargetAssemblyTypeName: Button_action, Assembly-CSharp
         m_MethodName: fire
         m_Mode: 1
         m_Arguments:
@@ -683,8 +683,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 357343946}
-        m_TargetAssemblyTypeName: button, Assembly-CSharp
-        m_MethodName: bonusstop
+        m_TargetAssemblyTypeName: Button_action, Assembly-CSharp
+        m_MethodName: BonusStop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -744,10 +744,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376f3259d6c996442ab7381f60778e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b: {fileID: 357343943}
-  onturn: 0
-  accel: 0.001
-  sel: {fileID: 1669448038}
+  button: {fileID: 357343943}
+  IsTurn: 0
+  button_accel: 0.001
+  arrow: {fileID: 1669448038}
 --- !u!1 &365120257
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &365120258
 Transform:
   m_ObjectHideFlags: 0
@@ -1373,8 +1373,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 357343946}
-          m_TargetAssemblyTypeName: button, Assembly-CSharp
-          m_MethodName: roup
+          m_TargetAssemblyTypeName: Button_action, Assembly-CSharp
+          m_MethodName: ButtonUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1389,8 +1389,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 357343946}
-          m_TargetAssemblyTypeName: button, Assembly-CSharp
-          m_MethodName: rodown
+          m_TargetAssemblyTypeName: Button_action, Assembly-CSharp
+          m_MethodName: ButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2047,8 +2047,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1954861437}
-        m_TargetAssemblyTypeName: result, Assembly-CSharp
-        m_MethodName: change
+        m_TargetAssemblyTypeName: result_popup, Assembly-CSharp
+        m_MethodName: Change
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2253,7 +2253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b29e8c3266940f4e813fe871b9b08cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  r: {fileID: 365120257}
+  result_UI: {fileID: 365120257}
 --- !u!1 &1986471954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,6 +2370,10 @@ PrefabInstance:
       propertyPath: Maker
       value: 
       objectReference: {fileID: 1669448038}
+    - target: {fileID: -2182078841538827004, guid: 9d838fcb9bf615544b72fe6a5a1bd8e9, type: 3}
+      propertyPath: spawn_maker
+      value: 
+      objectReference: {fileID: 616292712778419674}
     - target: {fileID: 1532430845701426402, guid: 9d838fcb9bf615544b72fe6a5a1bd8e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.99
@@ -2419,6 +2423,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d838fcb9bf615544b72fe6a5a1bd8e9, type: 3}
+--- !u!1 &616292712778419674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5358097400425309133, guid: 9d838fcb9bf615544b72fe6a5a1bd8e9, type: 3}
+  m_PrefabInstance: {fileID: 616292712778419673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
