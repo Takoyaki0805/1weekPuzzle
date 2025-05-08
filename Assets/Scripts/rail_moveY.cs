@@ -19,6 +19,7 @@ public class Rail_moveY : MonoBehaviour
         
     }
 
+    //レールにオブジェクトが触れている間オブジェクトを動かす
     void OnTriggerStay2D (Collider2D collision){
         if(collision.gameObject.tag=="Wall"||collision.gameObject.tag=="Hit"){
             GameObject material = collision.gameObject;
@@ -30,6 +31,7 @@ public class Rail_moveY : MonoBehaviour
         }
     }
 
+    //レールにオブジェクトが触れている間オブジェクトを動かす
     void OnTriggerExit2D (Collider2D collision){
         if(collision.gameObject.tag=="Wall"||collision.gameObject.tag=="Hit"){
             GameObject material = collision.gameObject;

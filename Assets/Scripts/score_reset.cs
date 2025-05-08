@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//スコアを管理しているオブジェクトを探索しスコアをリセットするクラス
 public class Score_reset : MonoBehaviour
 {
     //refactored

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+//ステージ毎のスコアを表示するクラス
 public class Stage_result : MonoBehaviour
 {
     GameObject system_object;

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    //refactored
     GameObject score_memory;
     public AudioSource audio_source;
     public AudioClip player_sound;
@@ -21,9 +20,10 @@ public class Target : MonoBehaviour
     {
         
     }
-
+    //ターゲットにあたったときの動作
     void OnTriggerEnter2D (Collider2D collision){
         if(collision.gameObject.tag=="Player"){
+            //効果音を再生(ターゲットが消えるのでPlayClipAtPount)
             AudioSource.PlayClipAtPoint(player_sound,transform.position);
             score_memory.GetComponent<Scoreboard>().ScoreMemory(100);
             score_memory.GetComponent<Scoreboard>().PlusBonus(1);

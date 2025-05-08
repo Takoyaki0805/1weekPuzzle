@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Rail_moveX : MonoBehaviour
 {
-    //refactored
     bool IsDirection = false;
     public float speed = 0.1f;
     // Start is called before the first frame update
@@ -19,6 +18,7 @@ public class Rail_moveX : MonoBehaviour
         
     }
 
+    //レールにオブジェクトが触れている間オブジェクトを動かす
     void OnTriggerStay2D (Collider2D collision){
         if(collision.gameObject.tag=="Wall"||collision.gameObject.tag=="Hit"){
             GameObject material = collision.gameObject;
@@ -28,9 +28,9 @@ public class Rail_moveX : MonoBehaviour
                 material.transform.position -= Vector3.right*speed;
             }         
         }
-        // Debug.Log("ささた");
     }
 
+    //レールからオブジェクトが抜け出した場合移動の向きを逆にする
     void OnTriggerExit2D (Collider2D collision){
         if(collision.gameObject.tag=="Wall"||collision.gameObject.tag=="Hit"){
             GameObject material = collision.gameObject;

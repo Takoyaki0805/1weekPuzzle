@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+//合計のスコアをテキストに表記するクラス
 public class Total_result : MonoBehaviour
 {
     //refactored

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Tweet : MonoBehaviour
 {
-    //refactored
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,7 @@ public class Tweet : MonoBehaviour
     {
         
     }
-
+    //スコアをツイートをするボタン用のイベント
     public void OnTweet(){
         GameObject[] score_data = GameObject.FindGameObjectsWithTag("System");
         int totalscore = score_data[0].GetComponent<Scoreboard>().totals; 

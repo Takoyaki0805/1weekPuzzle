@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Pre_load : MonoBehaviour
 {
-    //refactored
+    //初期設定シーンからタイトル画面に移動するイベント用
     // Start is called before the first frame update
     void Start()
     {

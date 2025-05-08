@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Player_move : MonoBehaviour
 {
-    //refactored
     public Rigidbody2D rig;  
     public float speed;
     public bool IsMove = false;
@@ -20,6 +19,7 @@ public class Player_move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ボタンが押されるまで重力をなくす
         if(IsMove){
             rig.gravityScale = 1;
         }else{
@@ -28,6 +28,7 @@ public class Player_move : MonoBehaviour
         }
     }
 
+    //ボタンが押されたら重力を戻し自機を加速させる
     public void PlayerGo(){
         IsMove = true;
         rig.AddForce(transform.right*speed,ForceMode2D.Impulse);

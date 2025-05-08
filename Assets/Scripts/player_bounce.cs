@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player_bounce : MonoBehaviour
 {
-    //refactored
     public int bounce_max = 5;
     int bounce_now = 0;
     public GameObject player_object;
@@ -25,8 +24,8 @@ public class Player_bounce : MonoBehaviour
         
     }
 
+    //地面に触れた場合反射回数が残っているなら反射する
     void OnCollisionEnter2D (Collision2D collision){
-
         if(bounce_now<=bounce_max){
             bounce_now++;
             sprite_renderer.color = new Color(1f,1f-(float)bounce_now/(float)bounce_max,1f-(float)bounce_now/(float)bounce_max);

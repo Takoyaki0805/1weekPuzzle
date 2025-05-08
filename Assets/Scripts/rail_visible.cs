@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class railvisible : MonoBehaviour
+//ターゲットの移動用レールをプレイ時に隠す
+public class Rail_visible : MonoBehaviour
 {
     //refactored
     public Renderer rail_object;

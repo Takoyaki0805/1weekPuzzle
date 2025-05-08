@@ -17,21 +17,19 @@ public class Scoreboard : MonoBehaviour
         DontDestroyOnLoad(this);
         SceneManager.sceneLoaded += Loaded;
     }
-
     // Update is called once per frame
     void Update()
     {
-        // score(10);
         txt.text = "score:" + score;    
     }
-
+    //すべてのスコアをリセット
     public void ScoreReset(){
         score = 0;
         totals = 0;
         bonus = 0;
         // Destroy(this.gameObject);
     }
-
+    //ステージスコアをトータルスコアに加算
     public void ScoreMemory(int num){
         score += num*bonus;
         totals += num*bonus;
@@ -41,15 +39,15 @@ public class Scoreboard : MonoBehaviour
         score -= num;
         totals -= num;
     }
-
+    //ボーナス点を加算する
     public void SetBonus(int value){
         bonus = value;
     }
-
+    
     public void PlusBonus(int value){
         bonus += value;
     }
-
+    //ロード時にスコアを表示するテキストを取得しステージにスコアをリセットする
     void Loaded(Scene scene,LoadSceneMode e){
         GameObject[] text_obj = GameObject.FindGameObjectsWithTag("txt");
         txt =  text_obj[0].GetComponent<Text>();

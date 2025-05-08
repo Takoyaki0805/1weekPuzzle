@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Audio : MonoBehaviour
 {
-    //refactored
     public float bgm_volume = 0.7f;
     public float se_volume = 1f;
     GameObject[] player;
@@ -22,6 +21,7 @@ public class Audio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //効果音の音量を調整するオブジェクトを探索
         player = GameObject.FindGameObjectsWithTag("Player");
         hits = GameObject.FindGameObjectsWithTag("Hit");
         foreach(GameObject i in player){
@@ -37,6 +37,7 @@ public class Audio : MonoBehaviour
         Change();
     }
 
+    //音量を変える
     public void Change(){
         GameObject[] volume_setting = GameObject.FindGameObjectsWithTag("Value");
         if(volume_setting.Length==0){return;}
