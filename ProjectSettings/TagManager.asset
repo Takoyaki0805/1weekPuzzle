@@ -5,12 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
-  - hit
-  - button
-  - sys
+  - Hit
+  - Button
+  - System
+  - Txt
+  - Summon
+  - Value
   - txt
-  - summon
-  - val
   layers:
   - Default
   - TransparentFX
