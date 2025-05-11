@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//自機を回転させるクラス
 public class Player_rotate : MonoBehaviour
 {
     // Start is called before the first frame update

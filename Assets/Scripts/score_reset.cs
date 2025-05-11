@@ -5,7 +5,6 @@ using UnityEngine;
 //スコアを管理しているオブジェクトを探索しスコアをリセットするクラス
 public class Score_reset : MonoBehaviour
 {
-    //refactored
     GameObject[] system;
     // Start is called before the first frame update
     void Start()

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Scoreboard : MonoBehaviour
 {
-    //refactored
     public Text txt; 
     public int score = 0;
     public int totals = 0;
