@@ -14,12 +14,20 @@ public class Button_action : MonoBehaviour
     public float button_accel;
     public GameObject arrow;
     private GameObject system;
+    string system_tag_name = "System";
+    string player_tag_name = "Player";
+    string button_tag_name = "Button";
+    float speed_max = 5f;
+    float accel_reset = 0.1f;
+    float accel_reset = 0.1f;
+    int bonus_reset = 1;
+
 
     // Start is called before the first frame update
     void Start()
     {
         button_accel = 0.2f;
-        GameObject[] searched_system = GameObject.FindGameObjectsWithTag("System");
+        GameObject[] searched_system = GameObject.FindGameObjectsWithTag(system_tag_name);
         system = searched_system[0]; 
     }
 
@@ -28,7 +36,7 @@ public class Button_action : MonoBehaviour
     {
         //加速度を上げながら回転し続ける動作
         if(IsRotating){
-            player = GameObject.FindGameObjectsWithTag("Player");
+            player = GameObject.FindGameObjectsWithTag(player_tag_name);
             if(player.Length != 0){
                 target = player[0];
                 target.GetComponent<Player_rotate>().BallRotate(speed);
@@ -36,8 +44,8 @@ public class Button_action : MonoBehaviour
             }
             //加速上限を設定
             speed += button_accel;
-            if(speed>5f){
-                speed = 5f;
+            if(speed > speed_max){
+                speed = speed_max;
             }
         }
     }
@@ -45,8 +53,8 @@ public class Button_action : MonoBehaviour
     //射出ボタンの動作
     public void fire(){
         GameObject[] searched_button;
-        searched_button = GameObject.FindGameObjectsWithTag("Button");
-        player = GameObject.FindGameObjectsWithTag("Player");
+        searched_button = GameObject.FindGameObjectsWithTag(button_tag_name);
+        player = GameObject.FindGameObjectsWithTag(player_tag_name);
         if(player.Length != 0){
             target = player[0];
             target.GetComponent<Player_move>().PlayerGo();
@@ -54,12 +62,11 @@ public class Button_action : MonoBehaviour
         foreach(GameObject button in searched_button){
             button.SetActive(false);
         }
-        Debug.Log("ボタン数:"+searched_button.Length);
     }
 
     //回転ボタンの動作
     public void Rotate(){
-        player = GameObject.FindGameObjectsWithTag("Player");
+        player = GameObject.FindGameObjectsWithTag(player_tag_name);
         if(player.Length != 0){
             target = player[0];
             target.GetComponent<Player_rotate>().BallRotate(button_accel);
@@ -69,7 +76,7 @@ public class Button_action : MonoBehaviour
     //ボタンを離したときの動作
     public void ButtonUp(){
         IsRotating = false;
-        speed = 0.1f;
+        speed = accel_reset;
     }
 
     public void ButtonDown(){
@@ -78,6 +85,6 @@ public class Button_action : MonoBehaviour
 
     //連続獲得ボーナス
     public void BonusStop(){
-        system.GetComponent<Scoreboard>().SetBonus(1);
+        system.GetComponent<Scoreboard>().SetBonus(bonus_reset);
     }
 }

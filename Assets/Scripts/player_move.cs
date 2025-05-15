@@ -8,12 +8,15 @@ public class Player_move : MonoBehaviour
     public Rigidbody2D rig;  
     public float speed;
     public bool IsMove = false;
+    string player_object_name = "player";
+    float gravity_max = 1f;
+    float gravity_min = 0f;
     // Start is called before the first frame update
     void Start()
     {
         IsMove = false;
         rig = this.gameObject.GetComponent<Rigidbody2D>();
-        this.gameObject.name = "player";
+        this.gameObject.name = player_object_name
     }
 
     // Update is called once per frame
@@ -21,9 +24,9 @@ public class Player_move : MonoBehaviour
     {
         //ボタンが押されるまで重力をなくす
         if(IsMove){
-            rig.gravityScale = 1;
+            rig.gravityScale = gravity_max;
         }else{
-            rig.gravityScale = 0;
+            rig.gravityScale = gravity_min;
             rig.velocity = new Vector2(0,0);
         }
     }

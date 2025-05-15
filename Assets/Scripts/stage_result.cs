@@ -7,16 +7,18 @@ using UnityEngine.UI;
 public class Stage_result : MonoBehaviour
 {
     GameObject system_object;
+    string system_tag  = "System";
+    string text_param = "ステージscore:";
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] systems = GameObject.FindGameObjectsWithTag("System");   
+        GameObject[] systems = GameObject.FindGameObjectsWithTag(system_tag);   
         system_object = systems[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = "ステージscore:" + system_object.GetComponent<Scoreboard>().score;
+        this.GetComponent<Text>().text = text_param + system_object.GetComponent<Scoreboard>().score;
     }
 }

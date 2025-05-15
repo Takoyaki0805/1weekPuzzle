@@ -10,20 +10,18 @@ public class Audio : MonoBehaviour
     public float se_volume = 1f;
     GameObject[] player;
     GameObject[] hits;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    string player_tag_name  = "Player";
+    string target_tag_name  = "Hit";
+    string volume_tag_name  = "Value";
+    int bgm_slider_number = 0;
+    int se_slider_number = 1;
 
     // Update is called once per frame
     void Update()
     {
         //効果音の音量を調整するオブジェクトを探索
-        player = GameObject.FindGameObjectsWithTag("Player");
-        hits = GameObject.FindGameObjectsWithTag("Hit");
+        player = GameObject.FindGameObjectsWithTag(player_tag_name);
+        hits = GameObject.FindGameObjectsWithTag(target_tag_name);
         foreach(GameObject i in player){
             AudioSource bounse_se = i.GetComponent<AudioSource>();
             bounse_se.volume = se_volume;
@@ -39,14 +37,13 @@ public class Audio : MonoBehaviour
 
     //音量を変える
     public void Change(){
-        GameObject[] volume_setting = GameObject.FindGameObjectsWithTag("Value");
+        GameObject[] volume_setting = GameObject.FindGameObjectsWithTag(volume_tag_name);
         if(volume_setting.Length==0){return;}
-        Slider volume_bgm = volume_setting[0].GetComponent<Slider>();
+        Slider volume_bgm = volume_setting[bgm_slider_number].GetComponent<Slider>();
         bgm_volume = volume_bgm.value;
 
-        Slider volume_se = volume_setting[1].GetComponent<Slider>();
+        Slider volume_se = volume_setting[se_slider_number].GetComponent<Slider>();
         se_volume = volume_se.value;
-
     }
 }
 

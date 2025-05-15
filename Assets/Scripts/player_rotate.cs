@@ -5,19 +5,8 @@ using UnityEngine;
 //自機を回転させるクラス
 public class Player_rotate : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    float none_rotate = 0f;
     public void BallRotate(float accel){
-        this.transform.Rotate(0f,0f,accel);
+        this.transform.Rotate(none_rotate,none_rotate,accel);
     }
 }

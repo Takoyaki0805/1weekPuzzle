@@ -5,16 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Pre_load : MonoBehaviour
 {
+    string title_scene_name = "title";
     //初期設定シーンからタイトル画面に移動するイベント用
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        SceneManager.LoadScene("title");
+        //シーンを読み込んだあとすぐ移動するのでUpdate
+        SceneManager.LoadScene(title_scene_name);
     }
 }

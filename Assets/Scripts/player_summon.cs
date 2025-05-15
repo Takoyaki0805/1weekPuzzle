@@ -9,11 +9,15 @@ public class Player_summon : MonoBehaviour
     public GameObject spawn_maker;
     Quaternion rotate_maker;
     GameObject score_memory;
+    string system_tag_name  = "System";
+    string player_tag_name  = "Player";
+    int score_dec_point  = 10;
+    float angle = 90f;
     // Start is called before the first frame update
     void Start()
     {
         //スコアを保持しているオブジェクトを探す
-        GameObject[] system_object = GameObject.FindGameObjectsWithTag("System");
+        GameObject[] system_object = GameObject.FindGameObjectsWithTag(system_tag_name);
         score_memory = system_object[0];
     }
 
@@ -21,12 +25,12 @@ public class Player_summon : MonoBehaviour
     void Update()
     {
         //スポーン地点に自機を回転をあわせて配置
-        player_summon = GameObject.FindGameObjectsWithTag("Player");
+        player_summon = GameObject.FindGameObjectsWithTag(player_tag_name);
         if(player_summon.Length == 0){
             rotate_maker = spawn_maker.transform.rotation;
-            rotate_maker *= Quaternion.AngleAxis(90f,Vector3.forward);
+            rotate_maker *= Quaternion.AngleAxis(angle,Vector3.forward);
             Instantiate(player_object,this.transform.position,rotate_maker);
-            score_memory.GetComponent<Scoreboard>().DecScore(10); 
+            score_memory.GetComponent<Scoreboard>().DecScore(score_dec_point); 
         }
     }
 }

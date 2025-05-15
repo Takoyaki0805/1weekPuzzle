@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class Tweet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    string system_tag_name = "System";
+    string tweet_title = "reflectballfor1week";
+    string tweet_tag_a = "unityroom";
+    string tweet_tag_b = "unity1week";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     //スコアをツイートをするボタン用のイベント
     public void OnTweet(){
-        GameObject[] score_data = GameObject.FindGameObjectsWithTag("System");
+        GameObject[] score_data = GameObject.FindGameObjectsWithTag(system_tag_name);
         int totalscore = score_data[0].GetComponent<Scoreboard>().totals; 
-        naichilab.UnityRoomTweet.Tweet ("reflectballfor1week", "あなたはReflectBallで"+totalscore+"点スコアを取りました", "unityroom", "unity1week");
+        string tweet_text = "あなたはReflectBallで"+totalscore+"点スコアを取りました";
+        naichilab.UnityRoomTweet.Tweet (tweet_title, tweet_text, tweet_tag_a, tweet_tag_b);
     }
 }

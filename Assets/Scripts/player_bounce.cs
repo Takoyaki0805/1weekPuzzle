@@ -11,25 +11,23 @@ public class Player_bounce : MonoBehaviour
     GameObject[] buttons;
     public AudioSource bounce_sound; 
     public AudioClip sound;
+    string button_tag_name = "button";
+
     // Start is called before the first frame update
     void Start()
     {
         sprite_renderer = player_object.GetComponent<SpriteRenderer>();
-        buttons = GameObject.FindGameObjectsWithTag("button");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        buttons = GameObject.FindGameObjectsWithTag(button_tag_name);
     }
 
     //地面に触れた場合反射回数が残っているなら反射する
     void OnCollisionEnter2D (Collision2D collision){
         if(bounce_now<=bounce_max){
             bounce_now++;
-            sprite_renderer.color = new Color(1f,1f-(float)bounce_now/(float)bounce_max,1f-(float)bounce_now/(float)bounce_max);
-            Debug.Log(1f-(float)bounce_now/(float)bounce_max);
+            float bounce_player_r = 1f;
+            float bounce_player_g = 1f-(float)bounce_now/(float)bounce_max;
+            float bounce_player_b = 1f-(float)bounce_now/(float)bounce_max;
+            sprite_renderer.color = new Color(bounce_player_r,bounce_player_g,bounce_player_b);
             bounce_sound.PlayOneShot(sound);
         }else{
             foreach(GameObject b in buttons){

@@ -13,10 +13,4 @@ public class Rail_visible : MonoBehaviour
     {
         rail_object.enabled = IsVisible;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -10,6 +10,9 @@ public class Scoreboard : MonoBehaviour
     public int score = 0;
     public int totals = 0;
     int bonus = 0;
+    string text_param = "score:";
+    string text_tag = "txt";
+    int score_lower = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +22,13 @@ public class Scoreboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txt.text = "score:" + score;    
+        txt.text = text_param + score;    
     }
     //すべてのスコアをリセット
     public void ScoreReset(){
-        score = 0;
-        totals = 0;
-        bonus = 0;
+        score = score_lower;
+        totals = score_lower;
+        bonus = score_lower;
         // Destroy(this.gameObject);
     }
     //ステージスコアをトータルスコアに加算
@@ -48,8 +51,8 @@ public class Scoreboard : MonoBehaviour
     }
     //ロード時にスコアを表示するテキストを取得しステージにスコアをリセットする
     void Loaded(Scene scene,LoadSceneMode e){
-        GameObject[] text_obj = GameObject.FindGameObjectsWithTag("txt");
+        GameObject[] text_obj = GameObject.FindGameObjectsWithTag(text_tag);
         txt =  text_obj[0].GetComponent<Text>();
-        score = 0;
+        score = score_lower;
     }
 }
