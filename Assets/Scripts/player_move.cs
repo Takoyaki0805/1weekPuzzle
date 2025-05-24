@@ -16,7 +16,7 @@ public class Player_move : MonoBehaviour
     {
         IsMove = false;
         rig = this.gameObject.GetComponent<Rigidbody2D>();
-        this.gameObject.name = player_object_name
+        this.gameObject.name = player_object_name;
     }
 
     // Update is called once per frame

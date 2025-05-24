@@ -19,7 +19,6 @@ public class Button_action : MonoBehaviour
     string button_tag_name = "Button";
     float speed_max = 5f;
     float accel_reset = 0.1f;
-    float accel_reset = 0.1f;
     int bonus_reset = 1;
 
 

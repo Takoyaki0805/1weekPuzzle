@@ -6,7 +6,7 @@ using UnityEngine;
 public class Score_reset : MonoBehaviour
 {
     GameObject[] system;
-    string system_tag = "System"
+    string system_tag = "System";
     // Start is called before the first frame update
     void Start()
     {
